@@ -52,4 +52,17 @@ public class LinkedList {
         current.next = null;
         return current;
     }
+
+    public int searchList(int n){
+        int pos = 1;
+        Node current = firstNode;
+        while (current.next != null){
+            if (current.data == n){
+                return pos;
+            }
+            current = current.next;
+            pos++;
+        }
+        return -1;
+    }
 }
