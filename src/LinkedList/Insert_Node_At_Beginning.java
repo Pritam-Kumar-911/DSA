@@ -3,7 +3,10 @@ package LinkedList;
 import java.util.Scanner;
 
 public class Insert_Node_At_Beginning {
+
     public static void main(String[] args) {
+        LinkedList linkedList = new LinkedList();
+
         Node nodeA = new Node();
         Node nodeB = new Node();
         Node nodeC = new Node();
@@ -21,26 +24,15 @@ public class Insert_Node_At_Beginning {
         nodeD.data = 8;
         nodeD.next = null;
 
-        System.out.println("Input the Data to be inserted!");
+        System.out.println("Input the Data to be inserted at Beginning");
         Scanner sc = new Scanner(System.in);
         int n= sc.nextInt();
 
-        Node newNode = new Node();
-        newNode.data = n;
 
-        Node START = nodeA;
+        linkedList.setFirstNode(nodeA);
 
-        if (START == null){
-            newNode.next = null;
-        }else{
-            newNode.next = START;
-            START = newNode;
-        }
+        linkedList.insertFirst(n);
+        linkedList.displayNode();
 
-        Node temp = START;
-        while (temp != null){
-            System.out.print(temp.data+", ");
-            temp = temp.next;
-        }
     }
 }
