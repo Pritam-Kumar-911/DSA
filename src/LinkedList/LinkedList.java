@@ -65,4 +65,14 @@ public class LinkedList {
         }
         return -1;
     }
+
+    public int maxValue(){
+        Node current = firstNode;
+        int max = 0;
+        while (current != null){
+            max = Math.max(max,current.data);
+            current = current.next;
+        }
+        return max;
+    }
 }
