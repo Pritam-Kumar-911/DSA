@@ -43,4 +43,13 @@ public class LinkedList {
         firstNode = firstNode.next;
         return temp;
     }
+
+    public Node deleteLast(){
+        Node current = firstNode;
+        while (current.next.next != null){
+            current = current.next;
+        }
+        current.next = null;
+        return current;
+    }
 }
