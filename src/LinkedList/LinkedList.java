@@ -37,4 +37,10 @@ public class LinkedList {
         }
         current.next = newNode;
     }
+
+    public Node deleteFirst(){
+        Node temp = firstNode;
+        firstNode = firstNode.next;
+        return temp;
+    }
 }
