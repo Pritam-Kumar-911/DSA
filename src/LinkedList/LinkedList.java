@@ -25,4 +25,16 @@ public class LinkedList {
         newNode.next = firstNode;
         firstNode = newNode;
     }
+
+    public void insertAtLast(int n){
+        Node newNode = new Node();
+        newNode.data = n;
+        newNode.next = null;
+
+        Node current = firstNode;
+        while (current.next != null){
+            current = current.next;
+        }
+        current.next = newNode;
+    }
 }
