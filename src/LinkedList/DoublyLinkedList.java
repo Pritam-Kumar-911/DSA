@@ -81,4 +81,17 @@ public class DoublyLinkedList {
         first = first.next;
         return current;
     }
+
+    public Node DeleteLast(){
+        Node current = last;
+        if (isEmpty())
+            throw new NoSuchElementException();
+        else if (first.next == null) {
+            first = null;
+        }else{
+            last.previous.next = null;
+        }
+        last = last.previous;
+        return current;
+    }
 }
