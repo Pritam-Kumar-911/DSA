@@ -42,4 +42,18 @@ public class CircularLinkedList {
         first = newNode;
         last.next = first;
     }
+    public void InsertLast(int data){
+        Node newNode = new Node();
+        newNode.data = data;
+        if (isEmpty()){
+            first = newNode;
+            last = newNode;
+            last.next = first;
+        }
+        else {
+            last.next = newNode;
+            last = newNode;
+            last.next = first;
+        }
+    }
 }
