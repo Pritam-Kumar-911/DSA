@@ -70,4 +70,15 @@ public class DoublyLinkedList {
         current.next = newNode;
         return true;
     }
+
+    public Node DeleteFirst() {
+        Node current = first;
+        if (first.next == null) {
+            last = null;
+        } else {
+            first.next.previous = null;
+        }
+        first = first.next;
+        return current;
+    }
 }
