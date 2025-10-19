@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.NoSuchElementException;
+
 public class DoublyLinkedList {
     private Node first;
     private Node last;
@@ -38,5 +40,34 @@ public class DoublyLinkedList {
             current.displayNode();
             current = current.next;
         }
+    }
+
+    public boolean insertAfter(int key , int data){
+
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        Node current = first;
+        while (current.data != key){
+            current = current.next;
+            if (current == null){
+                return false;
+            }
+        }
+
+        Node newNode = new Node();
+        newNode.data = data;
+
+        if (current == last){
+//            current.next = null;
+            last = newNode;
+
+        }else {
+            newNode.next = current.next;
+            current.next.previous = newNode;
+        }
+        newNode.previous =current;
+        current.next = newNode;
+        return true;
     }
 }
