@@ -94,4 +94,24 @@ public class DoublyLinkedList {
         last = last.previous;
         return current;
     }
+
+    public void DisplayForward(){
+        Node current = first;
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        while (current != null){
+            current.displayNode();
+            current = current.next;
+        }
+    }
+    public void DisplayBackward(){
+        if (isEmpty())
+            throw new NoSuchElementException();
+        Node current = last;
+        while (current != null){
+            current.displayNode();
+            current = current.previous;
+        }
+    }
 }
