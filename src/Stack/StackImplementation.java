@@ -13,5 +13,6 @@ public class StackImplementation {
         s1.pop();
 
         s1.printStack();
+
     }
 }
