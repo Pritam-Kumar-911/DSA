@@ -22,7 +22,6 @@ public class Max_Value_In_LinkedList {
         nodeD.next = null;
 
 
-        linkedList.setFirstNode(nodeA);
         System.out.println(linkedList.maxValue());
     }
 }

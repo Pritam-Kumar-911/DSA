@@ -23,13 +23,14 @@ public class InsertNode_At_Last {
         nodeD.data = 8;
         nodeD.next = null;
 
-        System.out.println("Input the Data to be inserted at Beginning");
+        System.out.println("Input the Data to be inserted at last");
         Scanner sc = new Scanner(System.in);
         int n= sc.nextInt();
 
         linkedList.setFirstNode(nodeA);
         linkedList.insertAtLast(n);
         linkedList.displayNode();
+
 
     }
 }
