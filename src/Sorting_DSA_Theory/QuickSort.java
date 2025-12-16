@@ -7,14 +7,13 @@ public class QuickSort {
     public static int partition(int[] arr , int low , int high){
         int pivot = arr[high];
         int boundary = low - 1;
-        for (int i=low ; i<high ; i++){
-            if (arr[i] < pivot){
+        for (int i=low ; i<=high ; i++){
+            if (arr[i] <= pivot){
                 boundary++;
                 swap(arr , i , boundary);
             }
         }
-        swap(arr , boundary +1 , high);
-        return boundary + 1;
+        return boundary;
     }
     public static void quickSort(int[] arr , int low , int high){
         if (low >= high){
