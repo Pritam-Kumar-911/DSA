@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Chatbot</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+        .chatbot-btn {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #4CAF50;
+          color: white;
+          border: none;
+          padding: 15px;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 20px;
+        }
+        .chatbot-window {
+          display: none;
+          position: fixed;
+          bottom: 80px;
+          right: 20px;
+          width: 300px;
+          height: 400px;
+          background: white;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.2);
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+        .chat-header {
+          background: #4CAF50;
+          color: white;
+          padding: 10px;
+          text-align: center;
+        }
+        .chat-messages {
+          flex: 1;
+          padding: 10px;
+          overflow-y: auto;
+          font-size: 14px;
+        }
+        .chat-input {
+          display: flex;
+          border-top: 1px solid #ccc;
+        }
+        .chat-input input {
+          flex: 1;
+          padding: 10px;
+          border: none;
+          outline: none;
+        }
+        .chat-input button {
+          background: #4CAF50;
+          color: white;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+        }
+        .bot { color: #4CAF50; margin: 5px 0; }
+        .user { color: #333; margin: 5px 0; text-align: right; }
+    </style>
+</head>
+<body>
+
+<button class="chatbot-btn">💬</button>
+
+<div class="chatbot-window">
+    <div class="chat-header">My Chatbot</div>
+    <div class="chat-messages" id="chat"></div>
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    const chatbotBtn = document.querySelector(".chatbot-btn");
+    const chatbotWindow = document.querySelector(".chatbot-window");
+    const chatBox = document.getElementById("chat");
+    const input = document.getElementById("userInput");
+
+    const rules = {
+      "hello": "Hi! How can I help you?",
+      "hours": "We are open Mon–Fri, 9am–6pm.",
+      "price": "Our plans start at just $9.99/month.",
+      "bye": "Goodbye! Have a nice day."
+    };
+
+    chatbotBtn.addEventListener("click", () => {
+      chatbotWindow.style.display =
+        chatbotWindow.style.display === "none" ? "flex" : "none";
+    });
+
+    function sendMessage() {
+      const userMsg = input.value.trim().toLowerCase();
+      if (!userMsg) return;
+
+      addMessage(userMsg, "user");
+      input.value = "";
+
+      let botReply = "Sorry, I don’t understand. Can you rephrase?";
+      for (let key in rules) {
+        if (userMsg.includes(key)) {
+          botReply = rules[key];
+          break;
+        }
+      }
+      setTimeout(() => addMessage(botReply, "bot"), 500);
+    }
+
+    function addMessage(msg, sender) {
+      const div = document.createElement("div");
+      div.className = sender;
+      div.innerText = msg;
+      chatBox.appendChild(div);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+</script>
+
+</body>
+</html>
