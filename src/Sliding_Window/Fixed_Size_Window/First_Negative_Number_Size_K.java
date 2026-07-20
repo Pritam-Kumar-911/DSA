@@ -1,4 +1,4 @@
-package Sliding_Window;
+package Sliding_Window.Fixed_Size_Window;
 
 import java.util.ArrayList;
 

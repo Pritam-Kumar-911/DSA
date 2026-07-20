@@ -1,4 +1,4 @@
-package Sliding_Window;
+package Sliding_Window.Fixed_Size_Window;
 
 public class Max_Sum_Subarray_Size_K {
     public static void main(String[] args) {

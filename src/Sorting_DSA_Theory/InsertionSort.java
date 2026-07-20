@@ -7,7 +7,9 @@ public class InsertionSort {
         for (int i=1 ; i<arr.length ; i++){
             int swap = arr[i];
             int j = i-1;
-            while (j>=0 && arr[j] > swap){
+            while (j >= 0 &&
+                    (String.valueOf(arr[j]) + swap)
+                            .compareTo(String.valueOf(swap) + arr[j]) < 0){
                 arr[j+1] = arr[j];
                 j--;
             }
@@ -27,6 +29,7 @@ public class InsertionSort {
         for (int array : arr){
             System.out.print(array + ", ");
         }
+
 
         System.out.println(" ");
         insertionSort(arr);

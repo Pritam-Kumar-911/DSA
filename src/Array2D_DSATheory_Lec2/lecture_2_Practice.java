@@ -39,8 +39,8 @@ public class lecture_2_Practice {
                 counter++;
             }
         }
-        for (char show : ColumnMajorArray){
-            System.out.print(show+", ");
+        for (char show : ColumnMajorArray) {
+            System.out.print(show + ", ");
         }
     }
 }

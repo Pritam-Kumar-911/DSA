@@ -1,6 +1,6 @@
 package Two_Pointer;
 
-public class practice {
+public class MergeSortedArray {
     public static void main(String[] args) {
         int[] nums1 = {1,2,3,0,0,0};
         int m = 3;

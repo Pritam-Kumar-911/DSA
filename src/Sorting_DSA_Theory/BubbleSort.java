@@ -1,5 +1,8 @@
 package Sorting_DSA_Theory;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class BubbleSort {
     public static void bubbleSort(int[] arr){
 
@@ -23,17 +26,12 @@ public class BubbleSort {
         int[] arr = {64,34,25,12,22,11,90};
 
         //Array before sort
-        for (int array : arr){
-            System.out.print(array+", ");
-        }
+        System.out.println(Arrays.toString(arr));
 
         bubbleSort(arr);
-        System.out.println("");
+        
         //Array after sort
-        for (int array : arr){
-            System.out.print(array+", ");
-        }
-
+        System.out.println(Arrays.toString(arr));
 
     }
 }
