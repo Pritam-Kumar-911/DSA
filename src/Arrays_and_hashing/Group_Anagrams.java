@@ -7,7 +7,9 @@ public class Group_Anagrams {
         String[] strs = {"eat","tea","tan","ate","nat","bat"};
 
         HashMap<String , List<String>> set = new HashMap<>();
+
         ArrayList<String> AL = new ArrayList<>();
+        
         for (String s : strs){
             String word = s;
             char[] chars = word.toCharArray();
